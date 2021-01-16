@@ -1,1 +1,5 @@
-export const Appointment = () => <div></div>;
+import React from 'react'
+
+export const Appointment = () => (
+    <div>Ashley</div>
+);

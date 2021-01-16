@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Appointment from '../src/appointment.js'
+import {Appointment} from '../src/appointment.js'
 
 describe('Appointment', () => {
     it('renders the customer first name', () => {
