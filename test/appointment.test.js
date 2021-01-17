@@ -27,4 +27,4 @@ describe('Appointment', () => {
         
         expect(container.textContent).toMatch('Jorden');
     });
-});
+}); 
