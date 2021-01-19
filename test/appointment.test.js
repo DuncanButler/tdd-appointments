@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-import {Appointment, AppointmentDayView} from '../src/appointment.js'
+import {Appointment, AppointmentsDayView} from '../src/appointment.js'
 
 describe('Appointment', () => {
     let customer;
@@ -29,7 +29,7 @@ describe('Appointment', () => {
     });
 }); 
 
-describe('AppoitmentDayView', () => {
+describe('AppoitmentsDayView', () => {
     let container;
 
     beforeEach(() => {
@@ -39,7 +39,18 @@ describe('AppoitmentDayView', () => {
     const render = component => ReactDOM.render(component, container);
 
     it('renders a div with the right id', () => {
-        render(<AppointmentDayView appoitments={[]} />);
-        expect(container.querySelector('div#appointmentDayView')).not.toBeNull();
+        render(<AppointmentsDayView appointments={[]} />);
+        expect(container.querySelector('div#appointmentsDayView')).not.toBeNull();
+    });
+
+    it('renders multiple appoitments in the ol element', () => {
+        const today = new Date();
+        const appointments = [
+            { startAt: today.setHours(12, 0) },
+            { startAt: today.setHours(13, 0) }
+        ];
+        render(<AppointmentsDayView appointments={appointments} />);
+        expect(container.querySelector('ol')).not.toBeNull();
+        expect(container.querySelector('ol').children).toHaveLength(2);
     });
 });
