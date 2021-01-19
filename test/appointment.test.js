@@ -43,7 +43,7 @@ describe('AppoitmentsDayView', () => {
         expect(container.querySelector('div#appointmentsDayView')).not.toBeNull();
     });
 
-    it('renders multiple appoitments in the ol element', () => {
+    it('renders multiple appointments in the ol element', () => {
         const today = new Date();
         const appointments = [
             { startAt: today.setHours(12, 0) },
